@@ -19,7 +19,8 @@
       </h4>
       <button
         class="inline-flex items-center justify-center whitespace-nowrap rounded border font-medium transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-stroke-strong hover:text-content-stronger hover:border-stroke-stronger data-[state=open]:bg-surface-alpha-light h-9 w-9 [&amp;>svg]:w-4 [&amp;>svg]:h-4 [&amp;>svg]:stroke-current bg-black font-focal text-white hover:bg-neutral-700"
-        ><svg
+      >
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -32,7 +33,9 @@
           class="lucide lucide-arrow-left h-6 w-6"
           ><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg
         ></button
-      ><button
+      >
+
+      <button
         class="inline-flex items-center justify-center whitespace-nowrap rounded border font-medium transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-stroke-strong hover:text-content-stronger hover:border-stroke-stronger data-[state=open]:bg-surface-alpha-light h-9 w-9 [&amp;>svg]:w-4 [&amp;>svg]:h-4 [&amp;>svg]:stroke-current bg-black font-focal text-white hover:bg-neutral-700"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +53,7 @@
       >
     </div>
     <div
-      class="scrollbar-hide mt-5 flex w-full overflow-scroll pr-[774px] lg:pl-[296px]"
+      class="scrollbar-hidden mt-5 flex w-full overflow-scroll pr-[774px] lg:pl-[296px]"
     >
       <a href="/models/aura-flow"
         ><div
