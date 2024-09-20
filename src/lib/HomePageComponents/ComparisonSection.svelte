@@ -38,21 +38,3 @@
     our real time infrastructure.
   </p>
 </div>
-
-<style>
-  .strip {
-    transition: width linear;
-  }
-
-  [data-time="2.5"] {
-    transition-duration: 2.5s;
-  }
-
-  [data-time="5"] {
-    transition-duration: 5s;
-  }
-
-  [data-time="9"] {
-    transition-duration: 9s;
-  }
-</style>
