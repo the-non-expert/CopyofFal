@@ -162,9 +162,10 @@
               </div>
             </div>
             <div
-              class="flex w-full flex-col items-center justify-between border-stroke-base bg-[#F4F4F4] p-5 lg:!mt-[unset] lg:h-40 lg:flex-row lg:rounded lg:border"
+              class="flex w-full flex-col items-center justify-between border-stroke-blue-200 bg-[#F4F4F4] p-5 lg:!mt-[unset] lg:h-40 lg:flex-row lg:rounded lg:border"
             >
-              <span class="flex h-4 w-full max-w-4xl items-center bg-theme p-3"
+              <span
+                class="flex h-4 w-full max-w-4xl items-center bg-[#99EDFF] p-3"
                 ><span
                   dir="ltr"
                   data-orientation="horizontal"
