@@ -4,6 +4,9 @@
   import left3 from "$lib/svgImages/left-3.svg";
   import right2 from "$lib/Images/right-2.png";
   import AccessAndCarousel from "../lib/HomePageComponents/AccessAndCarousel.svelte";
+  import ComparisonSection from "../lib/HomePageComponents/ComparisonSection.svelte";
+  import Features from "../lib/HomePageComponents/Features.svelte";
+  import Pricing from "../lib/HomePageComponents/Pricing.svelte";
 </script>
 
 <svg
@@ -114,4 +117,7 @@
 
 <div>
   <AccessAndCarousel />
+  <ComparisonSection />
+  <!-- <Features /> -->
+  <Pricing />
 </div>
