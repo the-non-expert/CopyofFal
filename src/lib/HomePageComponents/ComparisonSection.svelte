@@ -3,6 +3,7 @@
   import right31 from "$lib/Images/right-3-1.png";
   import rightm31 from "$lib/Images/right-m-3-1.png";
   import right32 from "$lib/Images/right-3-2.png";
+  import Strips from "../CommonComponents/Strips.svelte";
 </script>
 
 <div
@@ -25,39 +26,8 @@
     class="pointer-events-none absolute bottom-2 right-0 z-50 hidden lg:block lg:h-auto"
     alt=""
   />
-  <div class="flex flex-col">
-    <div class="flex flex-col items-start">
-      <div class="z-30 flex flex-col" style="width: 25%;">
-        <span class="flex w-full justify-between text-sm lg:text-2xl"
-          ><span>fal</span><span>2.5s</span></span
-        >
-        <div class="h-[35px] w-full bg-[#5718C0] md:h-[60px]"></div>
-      </div>
-      <div class="relative z-20 flex flex-col" style="width: 50%;">
-        <div
-          class="flex h-[35px] w-full items-end justify-end overflow-hidden bg-[#E5ECE7] md:h-[60px]"
-        >
-          <span
-            class="md:text-md ml-auto flex min-w-28 shrink-0 justify-between px-1 text-xs opacity-90 lg:-top-7 lg:w-40 lg:text-lg"
-            ><span>alternative 1 </span><span>5s</span></span
-          >
-        </div>
-      </div>
-      <div class="relative z-10 flex flex-col" style="width: 90%;">
-        <div
-          class="flex h-[35px] w-full items-end justify-end overflow-hidden bg-[#FFC4D8] md:h-[60px]"
-        >
-          <span
-            class="md:text-md ml-auto flex min-w-28 shrink-0 justify-between px-1 text-xs opacity-90 lg:-top-7 lg:w-40 lg:text-lg"
-            ><span>alternative 2</span><span>9.0s</span></span
-          >
-        </div>
-      </div>
-    </div>
-    <div class="mb-10 mt-2 font-hal text-sm lg:mb-[124px]">
-      flux[dev] inference speed
-    </div>
-  </div>
+  <Strips />
+
   <p
     class="font-focal text-3xl font-medium text-content-strong md:text-5xl lg:text-[72px] lg:leading-[69px]"
   >
@@ -68,3 +38,21 @@
     our real time infrastructure.
   </p>
 </div>
+
+<style>
+  .strip {
+    transition: width linear;
+  }
+
+  [data-time="2.5"] {
+    transition-duration: 2.5s;
+  }
+
+  [data-time="5"] {
+    transition-duration: 5s;
+  }
+
+  [data-time="9"] {
+    transition-duration: 9s;
+  }
+</style>
