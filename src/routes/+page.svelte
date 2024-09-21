@@ -7,6 +7,7 @@
   import ComparisonSection from "../lib/HomePageComponents/ComparisonSection.svelte";
   import Features from "../lib/HomePageComponents/Features.svelte";
   import Pricing from "../lib/HomePageComponents/Pricing.svelte";
+  import PixelImage from "../lib/CommonComponents/PixelImage.svelte";
 </script>
 
 <svg
@@ -53,6 +54,8 @@
   class="pointer-events-none absolute left-0 top-[119px] h-[226px] max-w-[457px] lg:h-auto"
   alt=""
 />
+
+<PixelImage />
 
 <img
   src={left3}
