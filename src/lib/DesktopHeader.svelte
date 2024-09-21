@@ -1,8 +1,8 @@
 <script>
 </script>
 
-<div class="container w-full mx-auto">
-  <div class="flex gap-2 items-center px-4 py-2 md:py-4">
+<div class="container w-full mx-auto hidden md:block">
+  <div class="flex gap-5 items-center px-4 py-2 md:py-4">
     <div class="mr-auto">
       <a href="/">
         <svg
@@ -26,24 +26,23 @@
     </div>
 
     <div
-      class="flex ml-auto flex-row justify-end ms-24 space-x-10 max-md:hidden"
+      class="flex text-sm ml-auto flex-row justify-end ms-24 space-x-4 max-md:hidden"
     >
-      <p class="">Explore</p>
-      <p>Documentation</p>
-      <p>Pricing</p>
-      <p>Community</p>
-      <p>Research Grants</p>
+      <p class="hover:bg-[#94DFEF] px-3 py-2 cursor-pointer">Explore</p>
+      <p class="hover:bg-[#94DFEF] px-3 py-2 cursor-pointer">Documentation</p>
+      <p class="hover:bg-[#94DFEF] px-3 py-2 cursor-pointer">Pricing</p>
+      <p class="hover:bg-[#94DFEF] px-3 py-2 cursor-pointer">Community</p>
+      <p class="hover:bg-[#94DFEF] px-3 py-2 cursor-pointer">Research Grants</p>
     </div>
 
     <div class="lg:space-x-4 space-x-2">
       <button
-        class="inline-flex items-center justify-center whitespace-nowrap rounded border border-black font-heading font-medium transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 bg-transparent text-content-strong border-stroke-strong hover:text-content-stronger hover:border-stroke-stronger data-[state=open]:bg-surface-alpha-light h-10 px-4"
+        class="border border-[#77B9C7] text-sm font-semibold px-3 py-2 hover:opacity-70"
         >Log-in</button
       >
-      <a
-        href="/api/auth/login?return_to=/"
-        class="inline-flex text-white items-center justify-center whitespace-nowrap rounded font-heading font-medium transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 px-4 bg-black hover:bg-neutral-700 max-md:hidden"
-        >Get Started</a
+      <button
+        class="border border-[#5E27C4] bg-black text-white text-sm font-semibold px-3 py-2 hover:opacity-70"
+        >Get Started</button
       >
     </div>
   </div>
