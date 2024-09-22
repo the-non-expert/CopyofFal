@@ -1,3 +1,28 @@
+<script>
+  import Item1 from "../CarouselItems/Item1.svelte";
+  import Item2 from "../CarouselItems/Item2.svelte";
+  import Item3 from "../CarouselItems/Item3.svelte";
+  import Item4 from "../CarouselItems/Item4.svelte";
+  import Item5 from "../CarouselItems/Item5.svelte";
+
+  let scrollContainer;
+
+  // Scroll functions
+  function scrollLeft() {
+    scrollContainer.scrollBy({
+      left: -scrollContainer.clientWidth / 4, // Scroll one item width to the left
+      behavior: "smooth", // Smooth scrolling
+    });
+  }
+
+  function scrollRight() {
+    scrollContainer.scrollBy({
+      left: scrollContainer.clientWidth / 4, // Scroll one item width to the right
+      behavior: "smooth", // Smooth scrolling
+    });
+  }
+</script>
+
 <div
   class="mb-[119px] ml-auto mt-[242px] flex w-4/5 flex-col gap-y-5 lg:ml-[296px] lg:w-auto lg:gap-y-10"
 >
@@ -18,7 +43,8 @@
         Model Gallery
       </h4>
       <button
-        class="inline-flex items-center justify-center whitespace-nowrap rounded border font-medium transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-stroke-strong hover:text-content-stronger hover:border-stroke-stronger data-[state=open]:bg-surface-alpha-light h-9 w-9 [&amp;>svg]:w-4 [&amp;>svg]:h-4 [&amp;>svg]:stroke-current bg-black font-focal text-white hover:bg-neutral-700"
+        on:click={scrollLeft}
+        class="inline-flex items-center justify-center h-9 w-9 bg-black text-white"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -31,13 +57,17 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           class="lucide lucide-arrow-left h-6 w-6"
-          ><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg
-        ></button
-      >
+        >
+          <path d="m12 19-7-7 7-7"></path>
+          <path d="M19 12H5"></path>
+        </svg>
+      </button>
 
       <button
-        class="inline-flex items-center justify-center whitespace-nowrap rounded border font-medium transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-stroke-strong hover:text-content-stronger hover:border-stroke-stronger data-[state=open]:bg-surface-alpha-light h-9 w-9 [&amp;>svg]:w-4 [&amp;>svg]:h-4 [&amp;>svg]:stroke-current bg-black font-focal text-white hover:bg-neutral-700"
-        ><svg
+        on:click={scrollRight}
+        class="inline-flex items-center justify-center h-9 w-9 bg-black text-white"
+      >
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -48,14 +78,28 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           class="lucide lucide-arrow-right h-6 w-6"
-          ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-        ></button
-      >
+        >
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </button>
     </div>
-    <div
+    <!-- <div
+      bind:this={scrollContainer}
       class="scrollbar-hidden mt-5 flex w-full overflow-scroll pr-[774px] lg:pl-[296px]"
     >
-      <a href="/models/aura-flow"
+      <Item1 />
+      <Item2 />
+      <Item3 />
+      <Item4 />
+      <Item5 />
+    </div> -->
+
+    <div
+      bind:this={scrollContainer}
+      class="scrollbar-hidden mt-5 flex w-full overflow-scroll pr-[774px] lg:pl-[296px]"
+    >
+      <a href="/"
         ><div
           class="hover:border-[#5718C0] text-[#5718C0] relative -ml-[1px] mr-[2px] flex h-[207px] w-[207px] flex-col border-4 border-transparent p-2.5 lg:mr-[5px] lg:h-[404px] lg:min-w-[404px] lg:p-5 justify-center"
         >
@@ -137,7 +181,7 @@
             ></svg
           >
         </div></a
-      ><a href="/models/flux-1"
+      ><a href="/"
         ><div
           class="hover:border-[#115EF3] text-[#115EF3] relative -ml-[1px] mr-[2px] flex h-[207px] w-[207px] flex-col border-4 border-transparent p-2.5 lg:mr-[5px] lg:h-[404px] lg:min-w-[404px] lg:p-5 justify-center"
         >
@@ -231,7 +275,7 @@
             ></svg
           >
         </div></a
-      ><a href="/models/flux-lora"
+      ><a href="/"
         ><div
           class="hover:border-[#5718C0] text-[#5718C0] relative -ml-[1px] mr-[2px] flex h-[207px] w-[207px] flex-col border-4 border-transparent p-2.5 lg:mr-[5px] lg:h-[404px] lg:min-w-[404px] lg:p-5 justify-center"
         >
@@ -326,7 +370,7 @@
             ></svg
           >
         </div></a
-      ><a href="/models/flux-realism"
+      ><a href="/"
         ><div
           class="hover:border-[#FFC4D8] text-[#FFC4D8] relative -ml-[1px] mr-[2px] flex h-[207px] w-[207px] flex-col border-4 border-transparent p-2.5 lg:mr-[5px] lg:h-[404px] lg:min-w-[404px] lg:p-5 justify-start"
         >
@@ -405,7 +449,7 @@
             ></svg
           >
         </div></a
-      ><a href="/models/flux-general"
+      ><a href="/"
         ><div
           class="hover:border-[#004012] text-[#004012] relative -ml-[1px] mr-[2px] flex h-[207px] w-[207px] flex-col border-4 border-transparent p-2.5 lg:mr-[5px] lg:h-[404px] lg:min-w-[404px] lg:p-5 justify-center"
         >
@@ -505,9 +549,9 @@
       >
     </div>
     <div class="mt-5 flex gap-x-1 lg:ml-[296px]">
-      <a
+      <button
         class="inline-flex items-center justify-center whitespace-nowrap rounded border font-medium transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-stroke-strong hover:text-content-stronger hover:border-stroke-stronger data-[state=open]:bg-surface-alpha-light h-10 px-4 bg-black font-focal text-white hover:bg-neutral-700"
-        href="/models">Explore more models</a
+        >Explore more models</button
       >
     </div>
   </div>
