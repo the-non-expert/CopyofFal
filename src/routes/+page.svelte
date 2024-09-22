@@ -55,7 +55,9 @@
   alt=""
 />
 
-<PixelImage />
+<div class="absolute right-12 top-16 lg:top-0 lg:right-0">
+  <PixelImage />
+</div>
 
 <img
   src={left3}
