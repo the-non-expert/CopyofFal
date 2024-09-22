@@ -1,3 +1,15 @@
+<script>
+  let isOpen = false;
+
+  function toggleBodyScroll(enable) {
+    if (enable) {
+      document.body.style.overflow = "auto";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  }
+</script>
+
 <div
   class="md:hidden relative z-[120] flex w-full items-center justify-between bg-transparent px-4 py-2 font-focal md:px-0 md:py-4"
 >
@@ -17,54 +29,67 @@
       clip-rule="evenodd"
       d="M30.1574 0.740479C30.9676 0.740479 31.6169 1.39923 31.6944 2.20567C32.3853 9.39891 38.1102 15.1234 45.3039 15.8142C46.1104 15.8917 46.7692 16.541 46.7692 17.3511V30.8959C46.7692 31.706 46.1104 32.3553 45.3039 32.4328C38.1102 33.1236 32.3853 38.8481 31.6944 46.0414C31.6169 46.8478 30.9676 47.5065 30.1574 47.5065H16.6118C15.8016 47.5065 15.1523 46.8478 15.0748 46.0414C14.384 38.8481 8.65901 33.1236 1.46528 32.4328C0.658799 32.3553 0 31.706 0 30.8959V17.3511C0 16.541 0.658803 15.8917 1.46529 15.8142C8.65902 15.1234 14.384 9.39891 15.0748 2.20567C15.1523 1.39923 15.8016 0.740479 16.6118 0.740479H30.1574ZM9.39037 24.0839C9.39037 31.865 15.6915 38.1728 23.4644 38.1728C31.2373 38.1728 37.5385 31.865 37.5385 24.0839C37.5385 16.3028 31.2373 9.99498 23.4644 9.99498C15.6915 9.99498 9.39037 16.3028 9.39037 24.0839Z"
     ></path></svg
-  ><button
-    class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading font-medium transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong data-[state=open]:bg-surface-alpha-strong h-8 px-2.5 text-sm"
+  >
+
+  <button
+    on:click={() => {
+      isOpen = !isOpen;
+      toggleBodyScroll(!isOpen);
+    }}
+    class="inline-flex items-center justify-center whitespace-nowrap rounded border transition-all focus-ring border-transparent bg-transparent h-8 px-2.5 text-sm"
     ><svg
       width="23"
       height="23"
       viewBox="0 0 23 23"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6 fill-black transition-transform -rotate-45"
-      ><path
+      class="h-6 w-6 fill-black transition-transform duration-300 {isOpen
+        ? 'rotate-15'
+        : '-rotate-45'}"
+    >
+      <path
         d="M22.2216 6.72391C22.4793 6.4114 22.4826 5.94892 22.1962 5.66248L17.4071 0.873394C17.1206 0.586946 16.6582 0.590275 16.3457 0.848007C13.5582 3.14694 9.5102 3.14679 6.72259 0.847662C6.41008 0.589907 5.94759 0.586546 5.66116 0.872975L0.872362 5.66178C0.585934 5.94821 0.589293 6.41069 0.847048 6.72321C3.14617 9.51082 3.14633 13.5588 0.847397 16.3463C0.589663 16.6588 0.586337 17.1212 0.872784 17.4077L5.66187 22.1968C5.94831 22.4832 6.41079 22.4799 6.7233 22.2222C9.51075 19.9232 13.5587 19.9234 16.3464 22.2225C16.6589 22.4803 17.1214 22.4836 17.4078 22.1972L22.1966 17.4084C22.483 17.122 22.4797 16.6595 22.2219 16.347C19.9228 13.5594 19.9226 9.51136 22.2216 6.72391Z"
-      ></path></svg
-    ></button
+      ></path>
+    </svg></button
   >
 </div>
 
-<!-- <div
-  class="fixed left-0 z-[100] flex h-screen w-full flex-col bg-theme px-4 pt-40 transition-all pointer-events-auto top-0 opacity-100"
+<!-- The Menu -->
+<div
+  class="fixed left-0 z-[100] bg-[#99EDFF] flex h-screen w-full flex-col bg-theme px-4 pt-40 transition-all duration-500 ease-in-out transform {isOpen
+    ? 'translate-y-0 opacity-100'
+    : 'translate-y-full opacity-0'}"
+  style="pointer-events: {isOpen ? 'auto' : 'none'}"
 >
   <div class="flex flex-col items-start justify-start space-y-4 font-focal">
-    <a
+    <button
       href="/models"
-      class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong data-[state=open]:bg-surface-alpha-strong h-9 px-3 text-sm font-normal"
-      >Model Gallery</a
-    ><a
+      class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong h-9 px-3 text-sm font-normal"
+      >Model Gallery</button
+    ><button
       href="/docs"
-      class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong data-[state=open]:bg-surface-alpha-strong h-9 px-3 text-sm font-normal"
-      >Documentation</a
-    ><a
+      class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong h-9 px-3 text-sm font-normal"
+      >Documentation</button
+    ><button
       href="/pricing"
-      class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong data-[state=open]:bg-surface-alpha-strong h-9 px-3 text-sm font-normal"
-      >Pricing</a
-    ><a
+      class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong h-9 px-3 text-sm font-normal"
+      >Pricing</button
+    ><button
       href="https://discord.com/invite/Fyc9PwrccF"
       target="_blank"
-      class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong data-[state=open]:bg-surface-alpha-strong h-9 px-3 text-sm font-normal"
-      >Community</a
-    ><a
+      class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong h-9 px-3 text-sm font-normal"
+      >Community</button
+    ><button
       href="/grants"
-      class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong data-[state=open]:bg-surface-alpha-strong h-9 px-3 text-sm font-normal"
-      >Research Grants</a
+      class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong h-9 px-3 text-sm font-normal"
+      >Research Grants</button
     >
   </div>
   <div class="mt-8 flex w-full">
     <a
       href="/api/auth/login"
-      class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading font-medium transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground border-primary-dark h-12 px-7 py-2 text-lg w-full bg-black hover:bg-neutral-700 md:w-auto"
+      class="inline-flex items-center text-white justify-center whitespace-nowrap rounded border font-heading font-medium transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground border-primary-dark h-12 px-7 py-2 text-lg w-full bg-black hover:bg-neutral-700 md:w-auto"
       >Get started</a
     >
   </div>
-</div> -->
+</div>
