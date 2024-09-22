@@ -8,6 +8,7 @@
   import Features from "../lib/HomePageComponents/Features.svelte";
   import Pricing from "../lib/HomePageComponents/Pricing.svelte";
   import PixelImage from "../lib/CommonComponents/PixelImage.svelte";
+  import SmallestPixelImage from "../lib/CommonComponents/SmallestPixelImage.svelte";
 </script>
 
 <svg
@@ -54,6 +55,12 @@
   class="pointer-events-none absolute left-0 top-[119px] h-[226px] max-w-[457px] lg:h-auto"
   alt=""
 />
+
+<div
+  class=" absolute right-[200px] lg:right-[630px] top-15 lg:top-28 block h-20"
+>
+  <SmallestPixelImage />
+</div>
 
 <div class="absolute right-12 top-16 lg:top-0 lg:right-0">
   <PixelImage />
