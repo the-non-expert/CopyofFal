@@ -28,9 +28,13 @@
     <div
       class="flex text-sm ml-auto flex-row justify-end ms-24 space-x-4 max-md:hidden"
     >
-      <p class="hover:bg-[#94DFEF] px-3 py-2 cursor-pointer">Explore</p>
+      <a href="/models"
+        ><p class="hover:bg-[#94DFEF] px-3 py-2 cursor-pointer">Explore</p></a
+      >
       <p class="hover:bg-[#94DFEF] px-3 py-2 cursor-pointer">Documentation</p>
-      <p class="hover:bg-[#94DFEF] px-3 py-2 cursor-pointer">Pricing</p>
+      <a href="/pricing"
+        ><p class="hover:bg-[#94DFEF] px-3 py-2 cursor-pointer">Pricing</p></a
+      >
       <p class="hover:bg-[#94DFEF] px-3 py-2 cursor-pointer">Community</p>
       <p class="hover:bg-[#94DFEF] px-3 py-2 cursor-pointer">Research Grants</p>
     </div>

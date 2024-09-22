@@ -62,18 +62,18 @@
   style="pointer-events: {isOpen ? 'auto' : 'none'}"
 >
   <div class="flex flex-col items-start justify-start space-y-4 font-focal">
-    <button
+    <a
       href="/models"
       class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong h-9 px-3 text-sm font-normal"
-      >Model Gallery</button
+      >Model Gallery</a
     ><button
       href="/docs"
       class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong h-9 px-3 text-sm font-normal"
       >Documentation</button
-    ><button
+    ><a
       href="/pricing"
       class="inline-flex items-center justify-center whitespace-nowrap rounded border font-heading transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 border-transparent bg-transparent text-content-base hover:bg-surface-alpha-strong hover:text-content-strong h-9 px-3 text-sm font-normal"
-      >Pricing</button
+      >Pricing</a
     ><button
       href="https://discord.com/invite/Fyc9PwrccF"
       target="_blank"
