@@ -46,7 +46,7 @@
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 1 }
     );
 
     strips.forEach((strip) => observer.observe(strip));
