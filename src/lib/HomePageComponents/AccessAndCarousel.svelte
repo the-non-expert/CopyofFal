@@ -1,9 +1,9 @@
 <script>
-  import Item1 from "../CarouselItems/Item1.svelte";
-  import Item2 from "../CarouselItems/Item2.svelte";
-  import Item3 from "../CarouselItems/Item3.svelte";
-  import Item4 from "../CarouselItems/Item4.svelte";
-  import Item5 from "../CarouselItems/Item5.svelte";
+  // import Item1 from "../CarouselItems/Item1.svelte";
+  // import Item2 from "../CarouselItems/Item2.svelte";
+  // import Item3 from "../CarouselItems/Item3.svelte";
+  // import Item4 from "../CarouselItems/Item4.svelte";
+  // import Item5 from "../CarouselItems/Item5.svelte";
 
   let scrollContainer;
 
